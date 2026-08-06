@@ -1,0 +1,106 @@
+{
+  "description": "Engineering Memory portable lifecycle bridge",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10,
+            "additionalContextLimit": 1400
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10,
+            "additionalContextLimit": 600
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "matcher": "manual|auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CODEX_HOME:-$HOME/.codex}/skills/engineering-memory/scripts/hook_router.py\" handle",
+            "commandWindows": "python \"%CODEX_HOME%\\skills\\engineering-memory\\scripts\\hook_router.py\" handle",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

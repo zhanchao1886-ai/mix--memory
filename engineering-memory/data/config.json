@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "timezone": "Asia/Shanghai",
+  "projects": [],
+  "limits": {
+    "hot_index_tokens": 2000,
+    "candidate_limit": 3,
+    "short_memory_tokens": 300,
+    "pipeline_soft_ratio": 0.25,
+    "pipeline_hard_ratio": 0.30,
+    "stable_ref_count": 2
+  },
+  "consolidation": {
+    "soft_tokens": 122880,
+    "hard_tokens": 131072,
+    "chunk_tokens": 16384,
+    "max_chunks_per_run": 8
+  },
+  "background": {
+    "mode": "spawn",
+    "auto_spawn": true,
+    "stop_budget_ms": 250,
+    "max_jobs_per_worker": 4,
+    "max_attempts": 3,
+    "lease_seconds": 900
+  },
+  "continuity": {
+    "enabled": true,
+    "injection_tokens": 1200,
+    "recent_turns": 6,
+    "turn_tokens": 400,
+    "transcript_tail_bytes": 1048576
+  },
+  "host": {
+    "default_adapter": "codex",
+    "portable": true
+  },
+  "global_trigger": {
+    "enabled": true,
+    "require_receipt": true
+  }
+}

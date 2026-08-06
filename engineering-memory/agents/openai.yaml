@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineering Memory"
+  short_description: "跨压缩延续同一工程任务，便携管理记忆并后台完成128K整理"
+  default_prompt: "使用 $engineering-memory 恢复当前任务连续性，检索工程记忆，并在结束时快速落水位线、后台整理与输出备份收据。"
